@@ -1,5 +1,7 @@
 import {ReactNode} from "react"
-import {View, Text, StyleSheet} from "react-native"
+import {View, Text, StyleSheet, Image} from "react-native"
+import home from "../assets/home_24dp_FILL0_wght400_GRAD0_opsz24.png"
+import {Link} from "expo-router"
 
 type scoreProps = {
 	acertos: ReactNode
@@ -15,9 +17,11 @@ export default function Score({acertos, erros, score}: scoreProps) {
 				<Text style={styles.result}>{score}</Text>
 				<Text style={styles.hitsMistakes}>Hits: {acertos}</Text>
 				<Text style={styles.hitsMistakes}>Mistakes: {erros}</Text>
+				<Link href={"/"}>
+					<Image source={home} style={{marginTop: 40}} />
+				</Link>
 			</View>
 		</View>
-		
 	)
 }
 const styles = StyleSheet.create({
@@ -27,7 +31,7 @@ const styles = StyleSheet.create({
 		display: "flex",
 		flex: 1,
 		justifyContent: "center",
-		alignItems: "center",
+		alignItems: "center"
 	},
 	box: {
 		width: "80%",
@@ -42,7 +46,7 @@ const styles = StyleSheet.create({
 	score: {
 		fontSize: 32,
 		color: "white",
-		fontWeight: 600,
+		fontWeight: 600
 	},
 	result: {
 		fontSize: 32,

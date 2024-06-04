@@ -6,7 +6,7 @@ type ShowScoreProps = {
 }
 
 const TimerComponent = ({toggleScore}: ShowScoreProps) => {
-	const [timer, setTimer] = useState(10)
+	const [timer, setTimer] = useState(30)
 
 	useEffect(() => {
 		const interval = setInterval(() => {

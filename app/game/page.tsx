@@ -48,16 +48,13 @@ export default function Game() {
 	}
 
 	return (
-		
 		<View style={styles.container}>
 			{showScore ? (
 				<Score acertos={acertos} erros={erros} score={score} />
 			) : (
 				<View style={styles.container}>
-					<Timer toggleScore={toggleScore} />
-					{" "}
-					<Text style={styles.score}>Score: {score}</Text>
-					<View style={styles.containerConta}> 
+					<Timer toggleScore={toggleScore} /> <Text style={styles.score}>Score: {score}</Text>
+					<View style={styles.containerConta}>
 						<Text style={styles.conta}>
 							{numeros[0]} x {numeros[1]}
 						</Text>
@@ -89,6 +86,7 @@ export default function Game() {
 									onPress={() => {
 										setErros(erros + 1)
 										setScore((prevScore) => prevScore - 10)
+										gerarConta()
 									}}
 								>
 									<Text
@@ -109,6 +107,7 @@ export default function Game() {
 									onPress={() => {
 										setErros(erros + 1)
 										setScore((prevScore) => prevScore - 10)
+										gerarConta()
 									}}
 								>
 									<Text
@@ -199,7 +198,7 @@ const styles = StyleSheet.create({
 	conta: {
 		fontSize: 64,
 		fontWeight: 700,
-		color: "#fff",
+		color: "#fff"
 	},
 	result: {
 		fontSize: 25,
