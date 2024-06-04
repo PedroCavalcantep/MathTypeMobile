@@ -92,7 +92,7 @@ export default function Game() {
 			)}
 
 			<TouchableOpacity onPress={restart}>
-				<Text style={styles.button}>restart</Text>
+				<Text style={styles.button}>restar</Text>
 			</TouchableOpacity>
 		</View>
 	)
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
 	container: {
 		display: "flex",
 		flex: 1,
-		backgroundColor: "#222",
+		backgroundColor: "#0C0F12",
 		justifyContent: "center",
 		alignItems: "center"
 	},

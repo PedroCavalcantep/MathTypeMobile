@@ -1,18 +1,32 @@
 import React, {useState, useEffect} from "react"
-import {Text} from "react-native"
+import {Text, StyleSheet} from "react-native"
 
-const TimerComponent = () => {
-	const [timer, setTimer] = useState(60)
+type ShowScoreProps = {
+	toggleScore: Function
+}
+
+const TimerComponent = ({toggleScore}: ShowScoreProps) => {
+	const [timer, setTimer] = useState(10)
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setTimer((timer) => timer - 1)
+			if (timer >= 1) {
+				setTimer((timer) => timer - 1)
+			} else {
+				toggleScore()
+			}
 		}, 1000)
 
 		return () => clearInterval(interval)
-	}, [])
+	}, [timer, toggleScore])
 
-	return <Text>{timer}</Text>
+	return <Text style={styles.timer}>{timer}</Text>
 }
+
+const styles = StyleSheet.create({
+	timer: {
+		color: "white"
+	}
+})
 
 export default TimerComponent
