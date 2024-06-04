@@ -9,9 +9,9 @@ export default function Home() {
 			<Text style={styles.title}>MathType</Text>
 			<Text style={styles.subtitle}>+ Mobile - </Text>
 			<Link href="/game/page">
-				<Pressable style={styles.button}>
+			<Pressable style={styles.button}>
 					<Text style={{color: "white", fontSize: 30, fontWeight: "bold"}}>Let's play</Text>
-				</Pressable>
+			</Pressable>
 			</Link>
 		</View>
 	)

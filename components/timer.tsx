@@ -25,7 +25,10 @@ const TimerComponent = ({toggleScore}: ShowScoreProps) => {
 
 const styles = StyleSheet.create({
 	timer: {
-		color: "white"
+		color: "white",
+		fontSize: 40,
+		fontWeight: 600,
+		paddingBottom: "20%"
 	}
 })
 

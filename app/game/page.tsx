@@ -48,21 +48,20 @@ export default function Game() {
 	}
 
 	return (
+		
 		<View style={styles.container}>
 			{showScore ? (
 				<Score acertos={acertos} erros={erros} score={score} />
 			) : (
 				<View style={styles.container}>
-					{" "}
 					<Timer toggleScore={toggleScore} />
-					<Text style={styles.numbers}>Score: {score}</Text>
-					<Text style={styles.numbers}>
-						{numeros[0]} x {numeros[1]}
-					</Text>
-					<Text style={styles.result}>{resultado}</Text>
-					<Text style={styles.pedro}>
-						Acertos: {acertos} Erros: {erros}
-					</Text>
+					{" "}
+					<Text style={styles.score}>Score: {score}</Text>
+					<View style={styles.containerConta}> 
+						<Text style={styles.conta}>
+							{numeros[0]} x {numeros[1]}
+						</Text>
+					</View>
 					<View style={styles.containerButton}>
 						{numerobom === 1 ? (
 							<>
@@ -162,28 +161,45 @@ export default function Game() {
 
 const styles = StyleSheet.create({
 	container: {
+		display: "flex",
 		flex: 1,
-		backgroundColor: "#0C0F12",
+		backgroundColor: "#0A0B0C",
 		justifyContent: "center",
-		alignItems: "center"
+		alignItems: "center",
+		paddingBottom: "5%"
 	},
 	containerButton: {
 		flexDirection: "row",
-		gap: 20
+		gap: 75
 	},
 	button: {
 		marginVertical: 50,
-
 		color: "#fff",
 		padding: 10,
-		backgroundColor: "#3498db",
+		backgroundColor: "#086CEA",
 		borderRadius: 15,
-		width: 100
+		width: 100,
+		minHeight: 63
 	},
-	numbers: {
-		fontSize: 40,
+	score: {
+		fontSize: 32,
+		fontWeight: 700,
 		color: "#fff",
-		marginTop: 20
+		marginBottom: "10%"
+	},
+	containerConta: {
+		width: "120%",
+		minHeight: "18%",
+		display: "flex",
+		backgroundColor: "#0C0F12",
+		justifyContent: "center",
+		alignItems: "center",
+		borderRadius: 36
+	},
+	conta: {
+		fontSize: 64,
+		fontWeight: 700,
+		color: "#fff",
 	},
 	result: {
 		fontSize: 25,
@@ -192,10 +208,5 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 		borderRadius: 15,
 		width: 200
-	},
-	pedro: {
-		fontSize: 20,
-		color: "#fff",
-		marginTop: 20
 	}
 })
